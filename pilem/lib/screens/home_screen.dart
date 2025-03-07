@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pilem/models/movie.dart';
 import 'package:pilem/services/api_service.dart';
+import 'package:pilem/screens/detail_screen.dart'; // Import DetailScreen
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -75,13 +76,13 @@ class _HomeScreenState extends State<HomeScreen> {
               final Movie movie = movies[index];
               return GestureDetector(
                 onTap: () {
-                  // Navigasi ke DetailScreen
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //     builder: (context) => DetailScreen(movie: movie),
-                  //   ),
-                  // );
+                  // Navigasi ke DetailScreen dengan membawa data movie
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DetailScreen(movie: movie),
+                    ),
+                  );
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
